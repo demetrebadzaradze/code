@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Callback</title>
+</head>
+<body>
+    <h1>OAuth Callback</h1>
+    <p>Extracting Authorization Code...</p>
+    <script>
+        // Get the code from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const authCode = urlParams.get("code");
+
+        if (authCode) {
+            document.body.innerHTML += `<p>Authorization Code: <strong>${authCode}</strong></p>`;
+        } else {
+            document.body.innerHTML += `<p style="color: red;">Authorization code not found.</p>`;
+        }
+    </script>
+</body>
+</html>
